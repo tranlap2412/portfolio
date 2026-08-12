@@ -88,7 +88,7 @@ export const messages: Messages = {
   [DATA.personalProjects[3].description]:
     "Frontend cho trang công ty, gồm sản phẩm, dịch vụ và câu chuyện Pione Group.",
   [DATA.personalProjects[4].description]:
-    "Frontend cho trang sự kiện Pione Dream Hackathon 2025.",
+    "Bản demo độc lập cho nền tảng sự kiện hackathon, gồm chủ đề thử thách, lịch, đăng ký và nộp dự án.",
   [DATA.personalProjects[5].description]:
     "Nền tảng Web3 cho tín chỉ carbon.",
   [DATA.personalProjects[6].description]:

@@ -406,7 +406,7 @@ export const DATA = {
   personalProjects: [
     {
       title: "Phả hệ gia tộc",
-      href: "https://genealogy-registry.vercel.app/",
+      href: "https://genealogy-management-system.vercel.app/",
       description:
         "Frontend for a Vietnamese genealogy site, with a digital identity for each clan on Pione Trace.",
     },
@@ -429,9 +429,10 @@ export const DATA = {
         "Frontend for the company site covering products, services, and the Pione Group story.",
     },
     {
-      title: "Pione Dream Hackathon",
-      href: "https://pionedream.netlify.app/",
-      description: "Frontend for the Pione Dream Hackathon 2025 event site.",
+      title: "DreamForge",
+      href: "https://hackathon-event-five.vercel.app/",
+      description:
+        "Independent demo of a hackathon event platform, with challenge tracks, a schedule, registration, and project submission.",
     },
     {
       title: "SCF Blue",
