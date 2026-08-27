@@ -78,3 +78,16 @@
   }
 }
 
+@media print {
+  html.dark {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+    --muted-foreground: 0 0% 35%;
+    --border: 0 0% 85%;
+  }
+
+  .print-hidden {
+    display: none !important;
+  }
+}
+

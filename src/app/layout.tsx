@@ -1,5 +1,6 @@
 import { LinguiClientProvider } from "@/components/lingui-client-provider";
 import Navbar from "@/components/navbar";
+import { SocialRails } from "@/components/social-rails";
 import { SiteBackground } from "@/components/site-background";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
@@ -65,15 +66,20 @@ export default function RootLayout({
     <html lang={locale} className="dark">
       <body
         className={cn(
-          "relative z-10 min-h-screen font-sans antialiased max-w-2xl mx-auto px-6 pt-12 pb-28 sm:pt-24 sm:pb-32",
+          "relative z-10 mx-auto min-h-screen max-w-3xl px-6 pb-32 pt-14 font-sans antialiased sm:px-8 sm:pb-36 sm:pt-24 print:max-w-none print:bg-white print:px-0 print:py-0 print:text-black",
           fontSans.variable,
         )}
       >
-        <SiteBackground />
+        <div className="print-hidden">
+          <SiteBackground />
+        </div>
         <LinguiClientProvider locale={locale}>
           <TooltipProvider delayDuration={0}>
             {children}
-            <Navbar />
+            <SocialRails />
+            <div className="print-hidden">
+              <Navbar />
+            </div>
           </TooltipProvider>
         </LinguiClientProvider>
       </body>

@@ -17,6 +17,13 @@ export function SiteBackground() {
     return () => window.cancelIdleCallback(id);
   }, []);
 
-  if (!ready) return null;
-  return <PortfolioScene />;
+  return (
+    <>
+      {ready ? <PortfolioScene /> : null}
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-b from-background/50 via-background/30 to-background/65"
+      />
+    </>
+  );
 }
