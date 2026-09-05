@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { FileTextIcon, HomeIcon, NotebookIcon } from "lucide-react";
 
 export const DATA = {
   name: "Tran Van Lap",
@@ -12,6 +12,17 @@ export const DATA = {
   summary:
     "I'm **Tran Van Lap**, a Frontend Developer with 5+ years of experience building scalable web applications, enterprise management systems, and Web3 platforms using **React.js**, **Next.js**, **Vue.js**, and **TypeScript**. I design reusable component architectures, implement complex business workflows, integrate RESTful APIs and blockchain services, and optimize frontend performance. I can own frontend delivery from requirement analysis through deployment support, including code reviews, technical guidance, and mentoring junior developers.",
   avatarUrl: "/avatar.jpg",
+  resumeUrl: "/Tran_Van_Lap_Resume.pdf",
+  resumeFileName: "Tran_Van_Lap_Resume.pdf",
+  resumeMeta: "2 pages · last updated 2026",
+  sourceUrl: "https://github.com/tranlap2412/portfolio",
+
+  stackLanguages: [
+    { name: "TypeScript", weight: 40 },
+    { name: "JavaScript", weight: 28 },
+    { name: "CSS", weight: 18 },
+    { name: "Vue", weight: 14 },
+  ],
 
   skillGroups: [
     {
@@ -74,12 +85,19 @@ export const DATA = {
 
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
+    {
+      href: "/Tran_Van_Lap_Resume.pdf",
+      icon: FileTextIcon,
+      label: "Resume",
+      download: true,
+    },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
 
   contact: {
     email: "tranvanlap2069@gmail.com",
     tel: "0375411324",
+    github: "tranlap2412",
     social: {
       GitHub: {
         name: "GitHub",

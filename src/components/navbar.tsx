@@ -22,26 +22,41 @@ export default function Navbar() {
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 flex justify-center pb-4">
       <div className="pointer-events-none fixed inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
       <Dock className="pointer-events-auto relative z-50 h-14 items-center border-border/60 bg-background/75 px-1 backdrop-blur-md">
-        {DATA.navbar.map((item) => (
-          <DockIcon key={item.href}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Link
-                  href={localePath(i18n.locale, item.href)}
-                  className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-12"
+        {DATA.navbar.map((item) => {
+          const download = "download" in item && item.download;
+          const className = cn(
+            buttonVariants({ variant: "ghost", size: "icon" }),
+            "size-12",
+          );
+          return (
+            <DockIcon key={item.href}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  {download ? (
+                    <a
+                      href={item.href}
+                      download
+                      className={className}
+                      aria-label={t(i18n, item.label)}
+                    >
+                      <item.icon className="size-4" />
+                    </a>
+                  ) : (
+                    <Link
+                      href={localePath(i18n.locale, item.href)}
+                      className={className}
+                    >
+                      <item.icon className="size-4" />
+                    </Link>
                   )}
-                >
-                  <item.icon className="size-4" />
-                </Link>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{t(i18n, item.label)}</p>
-              </TooltipContent>
-            </Tooltip>
-          </DockIcon>
-        ))}
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{t(i18n, item.label)}</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+          );
+        })}
         <Separator orientation="vertical" className="mx-0.5 h-6" />
         {Object.entries(DATA.contact.social)
           .filter(([_, social]) => social.navbar)
