@@ -103,11 +103,11 @@ export const ResumeCard = ({
           <CardHeader>
             {description ? (
               <button type="button" className="w-full text-left" onClick={toggle}>
-                <div className="flex items-center justify-between gap-x-2 text-base">
-                  <h3 className="inline-flex items-center justify-center text-sm font-semibold leading-none sm:text-base">
-                    {title}
+                <div className="flex items-baseline justify-between gap-x-3 text-base">
+                  <h3 className="inline-flex min-w-0 items-center gap-1 text-sm font-semibold leading-snug sm:text-base">
+                    <span className="truncate">{title}</span>
                     {badges && (
-                      <span className="inline-flex gap-x-1 pl-2">
+                      <span className="inline-flex gap-x-1 pl-1">
                         {badges.map((badge, index) => (
                           <Badge
                             variant="secondary"
@@ -126,29 +126,29 @@ export const ResumeCard = ({
                       )}
                     />
                   </h3>
-                  <div className="text-xs pt-1 sm:text-sm tabular-nums text-muted-foreground text-right text-nowrap">
+                  <div className="shrink-0 text-xs tabular-nums text-muted-foreground text-right sm:text-sm">
                     {period}
                   </div>
                 </div>
                 {subtitle && (
-                  <div className="font-sans text-xs pt-1 sm:text-sm">
-                    {subtitle} {location && `• ${location}`}
+                  <div className="pt-1 font-sans text-xs text-foreground/80 sm:text-sm">
+                    {subtitle} {location && `· ${location}`}
                   </div>
                 )}
               </button>
             ) : (
               <div>
-                <div className="flex items-center justify-between gap-x-2 text-base">
-                  <h3 className="inline-flex items-center justify-center text-sm font-semibold leading-none sm:text-base">
+                <div className="flex items-baseline justify-between gap-x-3 text-base">
+                  <h3 className="text-sm font-semibold leading-snug sm:text-base">
                     {title}
                   </h3>
-                  <div className="text-xs pt-1 sm:text-sm tabular-nums text-muted-foreground text-right text-nowrap">
+                  <div className="shrink-0 text-xs tabular-nums text-muted-foreground text-right sm:text-sm">
                     {period}
                   </div>
                 </div>
                 {subtitle && (
-                  <div className="font-sans text-xs pt-1 sm:text-sm">
-                    {subtitle} {location && `• ${location}`}
+                  <div className="pt-1 font-sans text-xs text-foreground/80 sm:text-sm">
+                    {subtitle} {location && `· ${location}`}
                   </div>
                 )}
               </div>
@@ -158,7 +158,7 @@ export const ResumeCard = ({
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-1 inline-flex text-sm text-foreground underline-offset-4 hover:underline"
+                className="mt-1.5 inline-flex text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
               >
                 {t(i18n, "Visit company")}
               </a>

@@ -19,9 +19,8 @@ export function BlogCard({ id, title, dates, location, image, href }: Props) {
 
   return (
     <li className="relative ml-10 py-4">
-      {/* Ảnh đại diện bài viết */}
-      <div className="absolute -left-16 top-2 flex items-center justify-center bg-white rounded-full">
-        <Avatar className="rounded-sm border size-12 m-auto">
+      <div className="absolute -left-16 top-2 flex items-center justify-center">
+        <Avatar className="m-auto size-12 rounded-md border border-border/60">
           <AvatarImage
             src={safeImage}
             alt={title}
@@ -31,20 +30,18 @@ export function BlogCard({ id, title, dates, location, image, href }: Props) {
         </Avatar>
       </div>
 
-      {/* Link tới trang chi tiết */}
       <Link
         href={link}
-        className="flex flex-1 flex-col justify-start gap-1"
+        className="flex flex-1 flex-col justify-start gap-1.5"
       >
         {dates && (
           <time className="text-xs text-muted-foreground">
             {format(new Date(dates), "dd MMMM, yyyy")}
           </time>
         )}
-        <h2 className="font-semibold leading-none">{title}</h2>
-        {/* {location && (
-          <p className="text-sm text-muted-foreground">{location}</p>
-        )} */}
+        <h2 className="text-base font-semibold leading-snug text-foreground/95 transition-colors hover:text-foreground">
+          {title}
+        </h2>
       </Link>
     </li>
   );

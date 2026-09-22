@@ -23,7 +23,10 @@ export function ProjectTabs({
 
   return (
     <div>
-      <div role="tablist" className="flex flex-wrap gap-2">
+      <div
+        role="tablist"
+        className="flex flex-wrap gap-x-4 gap-y-1 border-b border-border/40"
+      >
         {tabs.map((item) => {
           const selected = tab === item.id;
           return (
@@ -34,10 +37,10 @@ export function ProjectTabs({
               aria-selected={selected}
               onClick={() => setTab(item.id)}
               className={cn(
-                "rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors sm:text-base",
+                "-mb-px border-b-2 pb-2 text-sm font-medium transition-colors sm:text-base",
                 selected
                   ? "border-foreground text-foreground"
-                  : "border-border text-foreground/60 hover:border-foreground/40 hover:text-foreground",
+                  : "border-transparent text-muted-foreground hover:text-foreground",
               )}
             >
               {item.label}
@@ -69,13 +72,15 @@ export function ShowMore({
     <div>
       <div className={className}>{visible}</div>
       {!open && items.length > 6 ? (
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          className="mt-4 rounded-full border border-border px-4 py-1.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/60"
-        >
-          {label}
-        </button>
+        <div className="mt-4 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="text-sm font-medium text-foreground/70 underline-offset-4 transition-colors hover:text-foreground hover:underline"
+          >
+            {label}
+          </button>
+        </div>
       ) : null}
     </div>
   );

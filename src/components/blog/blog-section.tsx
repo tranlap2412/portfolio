@@ -23,7 +23,7 @@ export default async function BlogSection({ isHome }: { isHome?: boolean }) {
     }
 
     return (
-      <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
+      <ul className="mb-4 ml-4 divide-y divide-border/40 border-l border-border/40">
         {displayPosts.map((post, index) => (
           <BlogCard
             key={post.article_id || post.id || post.url || index}

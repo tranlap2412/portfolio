@@ -19,7 +19,7 @@ export default function ProjectSection({ locale = "en" }: Props) {
   );
   const readMore = t(i18n, "Read more");
   const card =
-    "group flex h-full flex-col rounded-2xl border border-border/60 bg-transparent px-4 py-4 transition-colors duration-300 hover:border-foreground/20";
+    "group flex h-full flex-col rounded-xl border border-border/50 px-4 py-3.5 transition-colors duration-300 hover:border-foreground/25";
 
   return (
     <ProjectTabs
