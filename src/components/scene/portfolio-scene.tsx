@@ -350,17 +350,19 @@ function Scene({ mobile }: { mobile: boolean }) {
 }
 
 export function PortfolioScene() {
-  const [mobile, setMobile] = useState(() =>
-    window.matchMedia("(max-width: 768px)").matches,
-  );
+  const [mobile, setMobile] = useState(false);
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const query = window.matchMedia("(max-width: 768px)");
     const update = () => setMobile(query.matches);
     update();
-    query.addEventListener("change", update);
-    return () => query.removeEventListener("change", update);
+    if (typeof query.addEventListener === "function") {
+      query.addEventListener("change", update);
+      return () => query.removeEventListener("change", update);
+    }
+    query.addListener(update);
+    return () => query.removeListener(update);
   }, []);
 
   useEffect(() => {
