@@ -10,7 +10,6 @@ import {
 } from "@/lib/github";
 import { cn } from "@/lib/utils";
 import { useLingui } from "@lingui/react";
-import { motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 
 const currentYear = new Date().getFullYear();
@@ -106,18 +105,13 @@ export function GithubSection() {
                   aria-selected={selected}
                   onClick={() => setYear(item)}
                   className={cn(
-                    "relative z-10 rounded-full px-3.5 py-1.5 text-xs font-medium tabular-nums sm:text-sm",
-                    selected ? "text-background" : "text-muted-foreground hover:text-foreground",
+                    "rounded-full px-3.5 py-1.5 text-xs font-medium tabular-nums transition-colors sm:text-sm",
+                    selected
+                      ? "bg-foreground text-background"
+                      : "text-muted-foreground hover:text-foreground",
                   )}
                 >
-                  {selected ? (
-                    <motion.span
-                      layoutId="gh-year-pill"
-                      className="absolute inset-0 rounded-full bg-foreground"
-                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                    />
-                  ) : null}
-                  <span className="relative">{item}</span>
+                  {item}
                 </button>
               );
             })}
